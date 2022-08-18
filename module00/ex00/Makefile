@@ -1,6 +1,8 @@
 NAME		=	megaphone
 SRC			=	megaphone.cpp
-OBJ			=	$(SRC:%.cpp=%.o)
+
+OBJ_DIR		=	obj/
+OBJ			=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 CC			=	c++
@@ -12,8 +14,9 @@ all: 			$(NAME)
 
 $(NAME):		$(OBJ)
 				$(CC) $(CPPFLAGS) $(OBJ) -o $@
+				@mkdir $(OBJ_DIR)
 				
-%.o:			%.cpp Makefile
+$(OBJ_DIR)%.o:	%.cpp Makefile
 				$(CC) $(CPPFLAGS) -c $< -o $@
 				
 clean:

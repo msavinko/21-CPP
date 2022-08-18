@@ -1,5 +1,5 @@
 NAME		=	phonebook
-SRC			=	phonebook.cpp
+SRC			=	main.cpp phonebook.cpp
 #HEADER		=	phonebook.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
