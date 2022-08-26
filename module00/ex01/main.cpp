@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 class Contact
 {
@@ -15,25 +16,32 @@ class Contact
 class Phonebook
 {
 	private:
-				int		number;
-				Contact	client;
+				string m_name;
+				// Contact	client;
 	public:
 				Phonebook()
 				{};
-				void setNum(int num){number = num;}
-				int getNum(){return number;}
+				void setName(string name)
+				{
+					m_name = name;
+				}
+				string getName()
+				{
+					return m_name;
+				}
 };
 
 int main(void)
 {
-	int num;
-
-	std::cout << "Enter any number\n";
-	std::cin >> num;
-	std::cin.ignore(32767, '\n');
+	// int num;
+	string name;
 	Phonebook book;
-	book.setNum(num);
-	num = book.getNum() + 2;
-	std::cout << "Your number + 2 is " << num << std::endl;
+
+	cout << "Enter your name\n";
+	getline(cin, name);
+	//cin.ignore(32767, '\n');
+	book.setName(name);
+	//num = book.getNum() + 2;
+	cout << "Your name is " << book.getName() << endl;
 	return (0);
 }
