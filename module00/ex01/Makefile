@@ -1,9 +1,9 @@
 NAME		=	phonebook
-SRC			=	main.cpp phonebook.cpp
-#HEADER		=	phonebook.hpp
+SRC			=	main.cpp phonebook.cpp contact.cpp
+# HEADER		=	phonebook.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98
 CC			=	c++
 RM			=	rm -f
 

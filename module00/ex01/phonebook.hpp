@@ -8,14 +8,14 @@
 using namespace std;
 class Phonebook
 {
-private:
-			// string m_name;
-		Contact	client;
-public:
-		Phonebook();
-		~Phonebook();
-		void newContact();
-		void printContact();
+	private:
+			Contact	client[3]; // change the number of contacts to 8!!!!
+			//int index;
+	public:
+			Phonebook();
+			~Phonebook();
+			void newContact(int index);
+			void printContact(int index);
 };
 
 
