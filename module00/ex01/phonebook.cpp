@@ -1,5 +1,16 @@
-//two classes
+#include "phonebook.hpp"
 
-//class PhoneBook has an array of contacts. with max 8 contacts. if 9th contact -> replace the oldest one by the new one.
+Phonebook::Phonebook() {} //constructor
 
-//class Contact
+Phonebook::~Phonebook() {} //distructor
+
+void Phonebook::newContact()
+{
+	string name;
+	cout << "Enter your name" << endl;
+	getline(cin, name);
+	this->client.setName(name);
+}
+
+void Phonebook::printContact()
+{	cout << this->client.getName() << endl;}

@@ -1,47 +1,32 @@
-#include <iostream>
-#include <string>
+#include "phonebook.hpp"
+
 using namespace std;
-
-class Contact
-{
-	// private:
-	// 	int num;
-		// std::string surname;
-	public:
-				Contact()
-				{std::cout << "hello\n";}
-
-};
-
-class Phonebook
-{
-	private:
-				string m_name;
-				// Contact	client;
-	public:
-				Phonebook()
-				{};
-				void setName(string name)
-				{
-					m_name = name;
-				}
-				string getName()
-				{
-					return m_name;
-				}
-};
 
 int main(void)
 {
 	// int num;
-	string name;
+	string command;
 	Phonebook book;
 
-	cout << "Enter your name\n";
-	getline(cin, name);
-	//cin.ignore(32767, '\n');
-	book.setName(name);
-	//num = book.getNum() + 2;
-	cout << "Your name is " << book.getName() << endl;
+	cout << "Enter your command: (ADD, SEARCH or EXIT)\n";
+	getline(cin, command);
+	while (command != "EXIT")
+	{
+		if (command == "ADD")
+		{
+			book.newContact();
+			cout << "you have a new contact ";
+			
+		}
+			//cout << "you entered ADD" << endl;
+		else if (command == "SEARCH")
+			cout << "you entered SEARCH" << endl;
+		else
+			cout << "Such command does not exist, please, try again." << endl;
+
+		cout << "Enter your command: (ADD, SEARCH or EXIT)\n";
+		getline(cin, command);
+	}
+	cout << "You exit the phonebook" << endl;
 	return (0);
 }
