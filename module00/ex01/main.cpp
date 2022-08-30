@@ -9,29 +9,21 @@ int main(void)
 	Phonebook book;
 	int index = 0;
 
-	cout << "Enter your command: (ADD, SEARCH or EXIT)\n";
+	cout << "Enter your command (ADD, SEARCH or EXIT): ";
 	getline(cin, command);
 	while (command != "EXIT")
 	{
-		if (command == "ADD")
-		{
+		if (command == "ADD"){
 			if (index == 8)
 				index = 0;
-			book.newContact(index);
-			cout << "you have a new contact ";
-			book.printContact(index);
-			index++;
-		}
-			//cout << "you entered ADD" << endl;
-		else if (command == "SEARCH")
-			cout << "you entered SEARCH" << endl;
-		else
-			cout << "Such command does not exist, please, try again." << endl;
-		// cout << index << endl;
-		cout << endl << "**************" << endl;
-		cout << "Enter your command: (ADD, SEARCH or EXIT)\n";
+			book.newContact(index++);
+		}else if (command == "SEARCH"){
+			book.searchContact();
+		}else
+			cout << "Such command does not exist, please, try again\n" << endl;
+		cout << "Enter your command (ADD, SEARCH or EXIT): ";
 		getline(cin, command);
 	}
-	cout << "You exit the phonebook" << endl;
+	cout << "\n   ~~~ You exit the phonebook ~~~   \n" << endl;
 	return (0);
 }

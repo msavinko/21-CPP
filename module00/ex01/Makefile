@@ -1,6 +1,6 @@
 NAME		=	phonebook
 SRC			=	main.cpp phonebook.cpp contact.cpp
-# HEADER		=	phonebook.hpp
+HEADER		=	phonebook.hpp contact.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
 CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98
@@ -14,7 +14,7 @@ all: 			$(NAME)
 $(NAME):		$(OBJ)
 				$(CC) $(CPPFLAGS) $(OBJ) -o $@
 				
-%.o:			%.cpp Makefile
+%.o:			%.cpp $(HEADER) Makefile
 				$(CC) $(CPPFLAGS) -c $< -o $@
 				
 clean:

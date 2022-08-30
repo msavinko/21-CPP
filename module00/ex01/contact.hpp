@@ -8,11 +8,11 @@ using namespace std;
 class Contact
 {
 	private:
-			string m_firstname;
-			string m_lastname;
-			string m_nickname;
-			string m_number;
-			string m_secret;
+			string _firstname;
+			string _lastname;
+			string _nickname;
+			string _number;
+			string _secret;
 	public:
 			Contact();
 			~Contact();
@@ -21,11 +21,9 @@ class Contact
 			void setNick(string name);
 			void setNumber(string number);
 			void setSecret(string secret);
-			string getName();
-			string getLastname();
-			string getNick();
-			string getNumber();
-			string getSecret();
+			string	getName(){return this->_firstname;};
+			string	getLastname(){return this->_lastname;};
+			string	getNick(){return this->_nickname;};
 };
 
 #endif
