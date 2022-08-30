@@ -61,13 +61,20 @@ void Phonebook::printContact(int index){
 
 int Phonebook::chooseContact()
 {
-	string strIndex;
-	cout << "Please, enter the index of the contact: ";
-	getline(cin, strIndex);
-	if (strIndex > "0" && strIndex < "9")
-		return (stoi(strIndex));
-	else
-		return (0);
+	int index;
+	while (true)
+	{
+		cout << "Please, enter the index of the contact: ";
+		cin >> index;
+		cin.ignore(32767, '\n');
+		if (cin.fail()){
+			cin.clear();
+			cin.ignore(32767, '\n');
+			continue;
+		}else
+			return (index);
+	}
+	return (index);
 }
 
 void Phonebook::searchContact()
