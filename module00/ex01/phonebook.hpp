@@ -6,19 +6,20 @@
 # include "contact.hpp"
 
 using namespace std;
+
 class Phonebook
 {
 	private:
-			Contact	client[8];
+			Contact	contact[8];
+			void printContact(int index);
+			string fillBook(string text);
+			int chooseContact();
+			void printName(string name);
 	public:
 			Phonebook();
 			~Phonebook();
 			void newContact(int index);
-			void printContact(int index);
 			void searchContact();
-			string fillBook(string text);
-			int chooseContact();
-			void printName(string name);
 };
 
 #endif

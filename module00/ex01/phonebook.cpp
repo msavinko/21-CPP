@@ -25,15 +25,15 @@ void Phonebook::newContact(int index)
 {
 	string name;
 	name = fillBook("Enter the first name: ");
-	this->client[index].setName(name);
+	this->contact[index].setName(name);
 	name = fillBook("and the last name: ");
-	this->client[index].setLastname(name);
+	this->contact[index].setLastname(name);
 	name = fillBook("nickname: ");
-	this->client[index].setNick(name);
+	this->contact[index].setNick(name);
 	name = fillBook("phone number: ");
-	this->client[index].setNumber(name);
+	this->contact[index].setNumber(name);
 	name = fillBook("and your darkest secret 😈: ");
-	this->client[index].setSecret(name);
+	this->contact[index].setSecret(name);
 }
 
 void Phonebook::printName(string name)
@@ -43,7 +43,9 @@ void Phonebook::printName(string name)
 		cout << " ";
 	if (len > 11)
 	{
-
+		for (int i = 0; i < 9; i++)
+			cout << name[i];
+		cout << ".|";
 	}else
 		cout << name << "|";
 }
@@ -51,9 +53,9 @@ void Phonebook::printName(string name)
 void Phonebook::printContact(int index){
 	if (index >= 0)
 		cout << "|         " << index + 1 << "|";
-	printName(client[index].getName());
-	printName(client[index].getLastname());
-	printName(client[index].getNick());
+	printName(contact[index].getName());
+	printName(contact[index].getLastname());
+	printName(contact[index].getNick());
 	cout << endl;;
 }
 
@@ -62,13 +64,10 @@ int Phonebook::chooseContact()
 	string strIndex;
 	cout << "Please, enter the index of the contact: ";
 	getline(cin, strIndex);
-	if (strIndex > "0" && strIndex < "9"){
-		return stoi(strIndex);
-	}else{
-		cout << "Wrong index\n";
-		chooseContact();
-	}
-	return (0);
+	if (strIndex > "0" && strIndex < "9")
+		return (stoi(strIndex));
+	else
+		return (0);
 }
 
 void Phonebook::searchContact()
@@ -80,14 +79,15 @@ void Phonebook::searchContact()
 	}
 	cout << endl;
 	int index = chooseContact();
-
+	
 	if (index > 0 && index < 9)
 	{
-		string check = client[index - 1].getName();
-		if (isalpha(check[0]))
+		string check = contact[index - 1].getName();
+		if (isalpha(check[0]) || isalnum(check[0]))
 			printContact(index - 1);
 		else
-			cout << "This contact does not exist.\n" << endl;
+			cout << "This contact does not exist.\n";
+		cout << endl;
 	}
 	else
 		cout << "This contact does not exist.\n" << endl;

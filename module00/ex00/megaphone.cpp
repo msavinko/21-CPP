@@ -6,7 +6,7 @@
 /*   By: marlean <marlean@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:46:42 by mariasavino       #+#    #+#             */
-/*   Updated: 2022/08/16 15:07:24 by marlean          ###   ########.fr       */
+/*   Updated: 2022/08/30 15:59:46 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ int main(int argc, char **argv)
 {
 	int i = 1, j = 0;
 
-	if (argc == 1)
+	if (argc == 1){
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	}
 	else
 	{
 		while (argv[i])
