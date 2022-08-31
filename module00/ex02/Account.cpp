@@ -40,6 +40,9 @@ int	Account::getNbDeposits( void ){
 int	Account::getNbWithdrawals( void ){
 	return Account::_totalNbWithdrawals;
 }
+int		Account::checkAmount( void ) const {
+	return this->_amount;
+}
 
 void	Account::_displayTimestamp( void ){
 	const time_t tm = time(nullptr);

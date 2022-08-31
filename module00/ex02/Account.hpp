@@ -34,7 +34,7 @@ public:
 
 	void	makeDeposit( int deposit ); //DONE
 	bool	makeWithdrawal( int withdrawal ); //DONE
-	int		checkAmount( void ) const;
+	int		checkAmount( void ) const; //DONE
 	void	displayStatus( void ) const; //DONE
 
 
@@ -47,8 +47,8 @@ private:
 
 	static void	_displayTimestamp( void ); //DONE
 
-	int				_accountIndex; 			//DONE
-	int				_amount;				//DONE
+	int				_accountIndex;
+	int				_amount;
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
