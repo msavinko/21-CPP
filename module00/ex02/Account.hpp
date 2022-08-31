@@ -29,13 +29,13 @@ public:
 	static int	getNbWithdrawals( void );  //DONE
 	static void	displayAccountsInfos( void );
 
-	Account( int initial_deposit );
-	~Account( void );
+	Account( int initial_deposit ); //DONE
+	~Account( void ); 				//DONE
 
-	void	makeDeposit( int deposit );
-	bool	makeWithdrawal( int withdrawal );
+	void	makeDeposit( int deposit ); //DONE
+	bool	makeWithdrawal( int withdrawal ); //DONE
 	int		checkAmount( void ) const;
-	void	displayStatus( void ) const;
+	void	displayStatus( void ) const; //DONE
 
 
 private:
@@ -47,8 +47,8 @@ private:
 
 	static void	_displayTimestamp( void ); //DONE
 
-	int				_accountIndex;
-	int				_amount;
+	int				_accountIndex; 			//DONE
+	int				_amount;				//DONE
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
