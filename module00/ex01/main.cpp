@@ -1,16 +1,14 @@
+#include <iostream>
+#include <string>
 #include "phonebook.hpp"
-#include "contact.hpp"
-
-using namespace std;
 
 int main(void)
 {
-	string command;
+	std::string command;
 	Phonebook book;
 	int index = 0;
-
-	cout << "Enter your command (ADD, SEARCH or EXIT): ";
-	getline(cin, command);
+	std::cout << "Enter your command (ADD, SEARCH or EXIT): ";
+	std::getline(std::cin, command);
 	while (command != "EXIT")
 	{
 		if (command == "ADD"){
@@ -20,10 +18,10 @@ int main(void)
 		}else if (command == "SEARCH"){
 			book.searchContact();
 		}else
-			cout << "Such command does not exist, please, try again\n" << endl;
-		cout << "Enter your command (ADD, SEARCH or EXIT): ";
-		getline(cin, command);
+			std::cout << "Such command does not exist, please, try again\n" << std::endl;
+		std::cout << "Enter your command (ADD, SEARCH or EXIT): ";
+		std::getline(std::cin, command);
 	}
-	cout << "\n   ~~~ You exit the phonebook ~~~   \n" << endl;
+	std::cout << "\n   ~~~ You exit the phonebook ~~~   \n" << std::endl;
 	return (0);
 }

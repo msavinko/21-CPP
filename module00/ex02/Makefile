@@ -3,7 +3,7 @@ SRC			=	Account.cpp test.cpp
 HEADER		=	Account.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
-CPPFLAGS	=	-Wall -Wextra -I. -std=c++98 # -Werror
+CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98
 CC			=	c++
 RM			=	rm -f
 

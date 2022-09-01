@@ -4,26 +4,27 @@
 # include <iostream>
 # include <string>
 
-using namespace std;
 class Contact
 {
 	private:
-			string _firstname;
-			string _lastname;
-			string _nickname;
-			string _number;
-			string _secret;
+			std::string _firstname;
+			std::string _lastname;
+			std::string _nickname;
+			std::string _number;
+			std::string _secret;
 	public:
 			Contact();
 			~Contact();
-			void setName(string name);
-			void setLastname(string name);
-			void setNick(string name);
-			void setNumber(string number);
-			void setSecret(string secret);
-			string	getName(){return this->_firstname;};
-			string	getLastname(){return this->_lastname;};
-			string	getNick(){return this->_nickname;};
+			void setName(std::string name);
+			void setLastname(std::string name);
+			void setNick(std::string name);
+			void setNumber(std::string number);
+			void setSecret(std::string secret);
+			std::string	getName();
+			std::string	getLastname();
+			std::string	getNick();
+			std::string	getNumber();
+			std::string	getSecret();
 };
 
 #endif

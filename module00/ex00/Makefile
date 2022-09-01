@@ -14,7 +14,7 @@ all: 			$(NAME)
 $(NAME):		$(OBJ)
 				$(CC) $(CPPFLAGS) $(OBJ) -o $@
 				
-$(OBJ_DIR)%.o:	%.cpp Makefile
+%.o:			%.cpp Makefile
 				$(CC) $(CPPFLAGS) -c $< -o $@
 				
 clean:

@@ -1,20 +1,20 @@
 #include "phonebook.hpp"
 
-Phonebook::Phonebook() {} //constructor
+Phonebook::Phonebook() {} 
 
-Phonebook::~Phonebook() {} //distructor
+Phonebook::~Phonebook() {} 
 
-string Phonebook::fillBook(string text)
+std::string Phonebook::fillBook(std::string text)
 {
-	string name;
+	std::string name;
 	while(true)
 	{
-		cout << text;
-		getline(cin, name);
-		if (isalpha(name[0]) || isalnum(name[0]))
+		std::cout << text;
+		std::getline(std::cin, name);
+		if (std::isalnum(name[0]))
 			break;
 		else{
-			cout << "Can't be empty. Please, try again." << endl;
+			std::cout << "Can't be empty. Please, try again." << std::endl;
 			continue;
 		}
 	}
@@ -23,7 +23,7 @@ string Phonebook::fillBook(string text)
 
 void Phonebook::newContact(int index)
 {
-	string name;
+	std::string name;
 	name = fillBook("Enter the first name: ");
 	this->contact[index].setName(name);
 	name = fillBook("and the last name: ");
@@ -36,27 +36,29 @@ void Phonebook::newContact(int index)
 	this->contact[index].setSecret(name);
 }
 
-void Phonebook::printName(string name)
+void Phonebook::printName(std::string name)
 {
-	int len = name.length();
-	while (len++ < 10)
-		cout << " ";
-	if (len > 11)
-	{
-		for (int i = 0; i < 9; i++)
-			cout << name[i];
-		cout << ".|";
+	if (name.length() > 11){
+		std::cout << name.substr(0,9) << ".";
 	}else
-		cout << name << "|";
+		std::cout << std::setw(10) << name;
+	std::cout << "|";
 }
 
-void Phonebook::printContact(int index){
-	if (index >= 0)
-		cout << "|         " << index + 1 << "|";
+void Phonebook::printContacts(int index){
+	std::cout << "|" << std::setw(10) << index + 1 << "|";
 	printName(contact[index].getName());
 	printName(contact[index].getLastname());
 	printName(contact[index].getNick());
-	cout << endl;;
+	std::cout << std::endl;;
+}
+
+void Phonebook::printContact(int index){
+	std::cout << "\nFirst name: " << contact[index].getName() << std::endl;
+	std::cout << "Last name: " << contact[index].getLastname() << std::endl;
+	std::cout << "Nickname: " << contact[index].getNick() << std::endl;
+	std::cout << "Phone number: " << contact[index].getNumber() << std::endl;
+	std::cout << "The darkest secret 😈: " << contact[index].getSecret() << std::endl;
 }
 
 int Phonebook::chooseContact()
@@ -64,12 +66,12 @@ int Phonebook::chooseContact()
 	int index;
 	while (true)
 	{
-		cout << "Please, enter the index of the contact: ";
-		cin >> index;
-		cin.ignore(32767, '\n');
-		if (cin.fail()){
-			cin.clear();
-			cin.ignore(32767, '\n');
+		std::cout << "Please, enter the index of the contact: ";
+		std::cin >> index;
+		std::cin.ignore(32767, '\n');
+		if (std::cin.fail()){
+			std::cin.clear();
+			std::cin.ignore(32767, '\n');
 			continue;
 		}else
 			return (index);
@@ -79,24 +81,24 @@ int Phonebook::chooseContact()
 
 void Phonebook::searchContact()
 {
-	cout << "\n|     Index|First name| Last name|  Nickname|" << endl;
+	std::cout << "\n|     Index|First name| Last name|  Nickname|" << std::endl;
 	int i = 0;
 	while (i < 8){
-		printContact(i++);
+		printContacts(i++);
 	}
-	cout << endl;
+	std::cout << std::endl;
 	int index = chooseContact();
 	
 	if (index > 0 && index < 9)
 	{
-		string check = contact[index - 1].getName();
-		if (isalpha(check[0]) || isalnum(check[0]))
+		std::string check = contact[index - 1].getName();
+		if (isalnum(check[0]))
 			printContact(index - 1);
 		else
-			cout << "This contact does not exist.\n";
-		cout << endl;
+			std::cout << "This contact does not exist.\n";
+		std::cout << std::endl;
 	}
 	else
-		cout << "This contact does not exist.\n" << endl;
+		std::cout << "This contact does not exist.\n" << std::endl;
 	
 }

@@ -3,18 +3,19 @@
 
 # include <iostream>
 # include <string>
+# include <iomanip>
 # include "contact.hpp"
-
-using namespace std;
 
 class Phonebook
 {
 	private:
 			Contact	contact[8];
+
+			void printContacts(int index);
 			void printContact(int index);
-			string fillBook(string text);
+			std::string fillBook(std::string text);
 			int chooseContact();
-			void printName(string name);
+			void printName(std::string name);
 	public:
 			Phonebook();
 			~Phonebook();

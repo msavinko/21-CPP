@@ -2,11 +2,6 @@
 #include <iostream>
 #include <ctime>
 
-
-#include <vector>
-#include <algorithm>
-#include <functional>
-
 Account::Account(int initial_deposit){
 	this->_amount = initial_deposit;
 	this->_accountIndex = this->_nbAccounts++;
@@ -16,11 +11,20 @@ Account::Account(int initial_deposit){
 	std::cout << ";amount:" << this->_amount <<";created" << std::endl;
 }
 
+Account::Account( void ){
+	this->_accountIndex = this->_nbAccounts++;
+	this->_amount = 0;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
+	Account::_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex;
+	std::cout << ";amount:" << this->_amount <<";created" << std::endl;
+}
+
 Account::~Account(){
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount <<";closed" << std::endl;
-
 }
 
 int	Account::_nbAccounts = 0;
@@ -40,8 +44,9 @@ int	Account::getNbDeposits( void ){
 int	Account::getNbWithdrawals( void ){
 	return Account::_totalNbWithdrawals;
 }
+
 int		Account::checkAmount( void ) const {
-	return this->_amount;
+	return Account::_amount;
 }
 
 void	Account::_displayTimestamp( void ){
@@ -58,7 +63,6 @@ void Account::displayAccountsInfos( void){
 	std::cout << ";total:" << getTotalAmount();
 	std::cout << ";deposits:" << getNbDeposits();
 	std::cout << ";withdrawals:" << getNbWithdrawals() << std::endl;
-	
 }
 
 void	Account::displayStatus( void ) const{
@@ -99,11 +103,8 @@ bool	Account::makeWithdrawal( int withdrawal ){
 		std::cout << ";withdrawal:refused" << std::endl;
 		return (false);
 	}
-
-
-	// index:0;p_amount:47;withdrawal:refused
-	// index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
 }
+
 //0. инициализировать все статические приватные переменные.
 //1. написать все Getters функции.
 //2. написать функцию _displayTimestamp которая показывает текущую дату и время
@@ -113,4 +114,3 @@ bool	Account::makeWithdrawal( int withdrawal ){
 //6. написать функцию displayStatus - выводит статус каждого элемента
 //7. написать функцию makeDeposit
 //7. написать функцию makeWithdrawal
-
