@@ -1,6 +1,5 @@
-NAME		=	XXXXXXX
-SRC			=	main.cpp XXXXXXX
-HEADER		=	XXXXXXX.hpp
+NAME		=	replace
+SRC			=	main.cpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
 CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98
