@@ -1,6 +1,6 @@
-NAME		=	XXXXXXX
-SRC			=	main.cpp XXXXXXX
-HEADER		=	XXXXXXX.hpp
+NAME		=	Weapon
+SRC			=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+HEADER		=	Weapon.hpp HumanA.hpp HumanB.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
 CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98
