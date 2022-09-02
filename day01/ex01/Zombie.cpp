@@ -1,9 +1,11 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name) : _name(name){
-	std::cout << "Zombie " << this->_name << " has been created 🧟" << std::endl;
+Zombie::Zombie(){
+	std::cout << "new Zombie has been created 🧟" << std::endl;
 }
-
+void Zombie::setName(std::string name){
+	this->_name = name;
+}
 Zombie::~Zombie(){
 	std::cout << "Zombie " << this->_name << " has been destroyed 💀" << std::endl;
 }

@@ -1,6 +1,6 @@
-NAME		=	XXXXXXX
-SRC			=	main.cpp XXXXXXX
-HEADER		=	XXXXXXX.hpp
+NAME		=	Zombie
+SRC			=	main.cpp Zombie.cpp zombieHorde.cpp
+HEADER		=	Zombie.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
 CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98

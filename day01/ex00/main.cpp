@@ -2,11 +2,10 @@
 
 int main(){
 	Zombie alfred = Zombie("Alfred");
-	Zombie* kollin = new Zombie("Kollin");
-	// Zombie* kollin = Zombie:: newZombie("Kollin");
 	alfred.announce();
+	Zombie *kollin = newZombie("Kollin");
 	kollin->announce();
-
 	delete kollin;
+	randomChump("Wayne");
 	return (0);
 }
