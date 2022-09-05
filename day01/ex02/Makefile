@@ -1,6 +1,5 @@
-NAME		=	XXXXXXX
-SRC			=	main.cpp XXXXXXX
-HEADER		=	XXXXXXX.hpp
+NAME		=	brain
+SRC			=	main.cpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
 CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98
@@ -14,7 +13,7 @@ all: 			$(NAME)
 $(NAME):		$(OBJ)
 				$(CC) $(CPPFLAGS) $(OBJ) -o $@
 				
-%.o:			%.cpp $(HEADER) Makefile
+%.o:			%.cpp Makefile
 				$(CC) $(CPPFLAGS) -c $< -o $@
 				
 clean:

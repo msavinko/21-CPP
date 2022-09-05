@@ -80,6 +80,7 @@
 		"memory_resource": "cpp",
 		"ranges": "cpp",
 		"stop_token": "cpp",
-		"filesystem": "cpp"
+		"filesystem": "cpp",
+		"__functional_base_03": "cpp"
 	}
 }

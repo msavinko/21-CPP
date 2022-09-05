@@ -1,5 +1,6 @@
 NAME		=	replace
-SRC			=	main.cpp
+SRC			=	main.cpp replace.cpp
+HEADER		=	replace.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
 CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98
@@ -18,6 +19,7 @@ $(NAME):		$(OBJ)
 				
 clean:
 				$(RM) $(OBJ)
+				$(RM) *.replace
 
 fclean:			clean
 				$(RM) $(NAME)

@@ -1,20 +1,15 @@
-#include <iostream>
-#include <string>
-#include <fstream>
+#include "replace.hpp"
+# include <iostream>
+# include <string>
+# include <fstream>
 
 int main(int argc, char **argv){
-	if (argc == 4){
-		std::ifstream filename(argv[1]);
-		std::string s1;
-		std::string s2;
-		// filename = argv[1];
-		s1 = argv[2];
-		s2 = argv[3];
-		filename >> s1 >> s2;
-		std::cout << "\nstr1: " << s1 << "\nstr2: " << s2 << std::endl;
-	}else{
-		std::cout <<  "wrong number of parameters";
-	}
 
+	if (argc != 4){
+		std::cout <<  "Wrong number of parameters" << std::endl;
+		return (0);
+	}
+	Replace sed;
+	sed.changeContent(argv[1], argv[2], argv[3]);
 	return (0);
 }
