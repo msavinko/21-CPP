@@ -31,14 +31,23 @@ void Harl::_error( void ){
 }
 
 void Harl::complain( std::string level ){
-	
-	switch(level){
-
+	int lvlNum = -1;
+	for (int i = 0; i < 4; i++){
+		if (this->_lvlText[i] == level){
+			lvlNum = i;
+		}
 	}
-	// for (int i = 0; i < 4; i++){
-	// 	if (this->_lvlText[i] == level){
-	// 		while (i < 4)
-	// 			(this->*_fcnPtr[i++])();
-	// 	}
-	// }
+	switch(lvlNum){
+		case 0:
+			Harl::_debug();
+		case 1:
+			Harl::_info();
+		case 2:
+			Harl::_warning();
+		case 3:
+			Harl::_error();
+			break;
+		default:
+			std::cout << "Wrong argument" << std::endl;
+	}
 }

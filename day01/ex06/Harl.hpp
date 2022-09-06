@@ -18,5 +18,3 @@ class Harl{
 };
 
 #endif
-
-//pointer to member functions.
