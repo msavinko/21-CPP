@@ -48,6 +48,6 @@ void Harl::complain( std::string level ){
 			Harl::_error();
 			break;
 		default:
-			std::cout << "Wrong argument" << std::endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }

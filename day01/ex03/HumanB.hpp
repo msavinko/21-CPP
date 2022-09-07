@@ -18,4 +18,4 @@ class HumanB{
 
 #endif
 // HumanB class DOES NOT TAKE WEAPON
-// MAY NOT ALWAYS HAVE A WEAPON - POINTER as it can be null
+// MAY NOT ALWAYS HAVE A WEAPON - POINTER as it can be NULL

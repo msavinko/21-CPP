@@ -7,9 +7,7 @@
 
 class Replace{
 	private:
-			std::string _fileName;
-			std::string _fileContent;
-			// std::string _buff;
+			std::string _newName;
 	public:
 			Replace();
 			~Replace();
