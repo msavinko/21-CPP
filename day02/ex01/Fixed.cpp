@@ -31,9 +31,6 @@ void Fixed::setRawBits(int const raw){
 	this->_fpnValue = raw;
 }
 
-
-
-
 Fixed::Fixed(const int num){
 	this->_fpnValue = num << this->_statBit;
 	std::cout << "Int constructor called\n";
@@ -49,3 +46,7 @@ int Fixed::toInt( void ) const{
 	return(this->_fpnValue >> this->_statBit);
 }
 
+std::ostream & operator<<(std::ostream & o, Fixed const & fixed){
+	o << fixed.toFloat();
+	return o;
+}
