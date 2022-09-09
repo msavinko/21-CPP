@@ -11,7 +11,8 @@ Fixed::~Fixed( void ){
 
 Fixed::Fixed(const Fixed & fixed){				//создается пустой объект и в него копируются значения.
 	std::cout << "Copy constructor called\n";
-	this->_fpnValue = fixed.getRawBits();
+	// this->_fpnValue = fixed.getRawBits();
+	*this = fixed;
 }
 
 Fixed & Fixed::operator=(const Fixed & fixed){	//в уже существующий объект присваиваются значения.
