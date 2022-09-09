@@ -1,23 +1,23 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(){
-	std::cout << "Default constructor called\n";
+Fixed::Fixed( void ){
 	this->_fpnValue = 0;
+	std::cout << "Default constructor called\n";
 }
 
-Fixed::~Fixed(){
+Fixed::~Fixed( void ){
 	std::cout << "Destructor called\n";
 }
 
-Fixed::Fixed(const Fixed &fixed){
+Fixed::Fixed(const Fixed & fixed){				//создается пустой объект и в него копируются значения.
 	std::cout << "Copy constructor called\n";
-	this->_fpnValue = fixed._fpnValue;
+	this->_fpnValue = fixed.getRawBits();
 }
 
-Fixed &Fixed::operator=(const Fixed &fixed){
-	std::cout << "Copy assignment operator called\n";
+Fixed & Fixed::operator=(const Fixed & fixed){	//в уже существующий объект присваиваются значения.
 	if (this == &fixed)
 		return *this;
+	std::cout << "Copy assignment operator called\n";
 	this->setRawBits(fixed.getRawBits());
 	return *this;
 }

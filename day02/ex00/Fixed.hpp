@@ -8,10 +8,10 @@ class Fixed{
 			int _fpnValue;
 			static const int _statBit = 8;
 	public:
-			Fixed();	//default constructor
-			~Fixed();
-			Fixed(const Fixed &fixed);	//a copy constructor
-			Fixed &operator=(const Fixed &fixed);	//a copy assignment operator overload
+			Fixed( void );							//default constructor
+			~Fixed( void );
+			Fixed(const Fixed & fixed);				//a copy constructor
+			Fixed & operator=(const Fixed & fixed);	//a copy assignment operator overload
 			int getRawBits(void) const;
 			void setRawBits(int const raw);
 };
