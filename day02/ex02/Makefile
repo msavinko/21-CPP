@@ -1,6 +1,6 @@
-NAME		=	XXXXX
-SRC			=	main.cpp XXXXX.cpp
-HEADER		=	XXXXX.hpp
+NAME		=	Fixed
+SRC			=	main.cpp Fixed.cpp
+HEADER		=	Fixed.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
 CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98
