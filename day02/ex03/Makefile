@@ -1,6 +1,6 @@
-NAME		=	Harl
-SRC			=	main.cpp Harl.cpp
-HEADER		=	Harl.hpp
+NAME		=	XXXXX
+SRC			=	main.cpp XXXXX.cpp
+HEADER		=	XXXXX.hpp
 OBJ			=	$(SRC:%.cpp=%.o)
 
 CPPFLAGS	=	-Wall -Wextra -Werror -I. -std=c++98

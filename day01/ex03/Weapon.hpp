@@ -10,7 +10,7 @@ class Weapon{
 	public:
 		Weapon(std::string type);
 		~Weapon();
-		const std::string &getType();
+		const std::string &getType();  //function returns a const reference to the string.
 		void setType(std::string newType);
 };
 
