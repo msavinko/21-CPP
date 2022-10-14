@@ -9,8 +9,10 @@ class Fixed{
 			int _fpnValue;
 			static const int _statBit = 8;
 	public:
+			//default constructor and destructor
 			Fixed( void );
 			~Fixed( void );
+
 			//copy constructor
 			Fixed(const Fixed & fixed);
 
@@ -22,24 +24,28 @@ class Fixed{
 
 			//constructor takes a const int
 			Fixed(const int num);
-
 			//constructor takes a const float
 			Fixed(const float num);
 			float toFloat( void ) const;
 			int toInt( void ) const;
 
 			//overload operators
-			Fixed & operator>(const Fixed & fixed);
-			Fixed & operator<(const Fixed & fixed);
-			Fixed & operator>=(const Fixed & fixed);
-			Fixed & operator<=(const Fixed & fixed);
-			Fixed & operator==(const Fixed & fixed);
-			Fixed & operator!=(const Fixed & fixed);
-			Fixed & operator+(const Fixed & fixed);
-			Fixed & operator-(const Fixed & fixed);
-			Fixed & operator*(const Fixed & fixed);
-			Fixed & operator/(const Fixed & fixed);
+			bool operator>(const Fixed & fixed) const;
+			bool operator<(const Fixed & fixed) const;
+			bool operator>=(const Fixed & fixed) const;
+			bool operator<=(const Fixed & fixed) const;
+			bool operator==(const Fixed & fixed) const;
+			bool operator!=(const Fixed & fixed) const;
+
+			Fixed operator+(const Fixed & fixed) const;
+			Fixed operator-(const Fixed & fixed) const;
+			Fixed operator*(const Fixed & fixed) const;
+			Fixed operator/(const Fixed & fixed) const;
 			//4 increment/decrement
+			Fixed &operator++(void);
+     		Fixed operator++(int);
+     		Fixed &operator--(void);
+      		Fixed operator--(int);
 
 			//overload member functions
 			static Fixed & min(Fixed &one, Fixed &two); 					//return reference to the smallest one

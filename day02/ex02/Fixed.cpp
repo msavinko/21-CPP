@@ -1,11 +1,11 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed( void ){
+Fixed::Fixed( void ){ //default constructor
 	this->_fpnValue = 0;
 }
-Fixed::~Fixed( void ){
+Fixed::~Fixed( void ){ //default destructor
 }
-Fixed::Fixed(const Fixed & fixed){
+Fixed::Fixed(const Fixed & fixed){ //copy constructor
 	*this = fixed;
 }
 Fixed & Fixed::operator=(const Fixed & fixed){
@@ -39,3 +39,77 @@ std::ostream & operator<<(std::ostream & o, Fixed const & fixed){
 	return o;
 }
 
+Fixed Fixed::operator+(const Fixed & fixed) const{
+	Fixed result(this->toFloat() + fixed.toFloat());
+	return (result);
+}
+Fixed Fixed::operator-(const Fixed & fixed) const{
+	Fixed result(this->toFloat() - fixed.toFloat());
+	return (result);
+}
+
+Fixed Fixed::operator * (const Fixed & fixed) const {
+	Fixed result(this->toFloat() * fixed.toFloat());
+	return (result);
+}
+Fixed Fixed::operator/(const Fixed & fixed) const{
+	Fixed result(this->toFloat() / fixed.toFloat());
+	return (result);
+}
+
+bool Fixed::operator>(const Fixed & fixed) const{
+	return -_fpnValue > fixed.getRawBits();
+}
+bool Fixed::operator<(const Fixed & fixed) const{
+	return -_fpnValue < fixed.getRawBits();
+}
+bool Fixed::operator>=(const Fixed & fixed) const{
+	return -_fpnValue >= fixed.getRawBits();
+}
+bool Fixed::operator<=(const Fixed & fixed) const{
+	return -_fpnValue <= fixed.getRawBits();
+}
+bool Fixed::operator==(const Fixed & fixed) const{
+	return -_fpnValue == fixed.getRawBits();
+}
+bool Fixed::operator!=(const Fixed & fixed) const{
+	return -_fpnValue != fixed.getRawBits();
+}
+//increment and decrement
+Fixed	&Fixed::operator++(void) {
+    _fpnValue++;
+    return (*this);
+}
+
+Fixed	Fixed::operator++(int) {
+    Fixed tmp(*this);
+    operator++();
+    return (tmp);
+}
+
+Fixed	&Fixed::operator--(void) {
+    _fpnValue--;
+    return (*this);
+}
+
+Fixed	Fixed::operator--(int) {
+    Fixed tmp(*this);
+    operator--();
+    return (tmp);
+}
+/* min & max */
+Fixed &Fixed::min(Fixed &one, Fixed &two){
+	return one < two ? one : two;
+}
+
+const  Fixed &Fixed::min(const Fixed &one, const Fixed &two){
+	return one < two ? one : two;
+}
+
+Fixed &Fixed::max(Fixed &one, Fixed &two){
+	return one > two ? one : two;
+}
+
+const Fixed &Fixed::max(const Fixed &one, const Fixed &two){
+	return one > two ? one : two;
+}
